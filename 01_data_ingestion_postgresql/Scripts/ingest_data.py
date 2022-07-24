@@ -1,5 +1,3 @@
-from email import iterators
-import imp
 import os
 import pandas as pd
 import argparse
@@ -19,16 +17,16 @@ def main(params):
   file_csv = 'output_data.csv'
 
   """Downloading the parquet file"""
-  os.system(f'curl {url} -o data/{file_output}')
+  os.system(f'curl {url} -o {file_output}')
 
   """Creating an engine connection to postgresql database"""
   engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
 
-  df_parquet = pd.read_parquet(f'data/{file_output}')
+  df_parquet = pd.read_parquet(f'{file_output}')
 
-  df_parquet.to_csv(f'data/{file_csv}', index=False, sep="\t")
+  df_parquet.to_csv(f'{file_csv}', index=False, sep="\t")
 
-  df_iter = pd.read_csv(f'data/{file_csv}', iterator=True, chunksize=100000)
+  df_iter = pd.read_csv(f'{file_csv}', iterator=True, chunksize=100000)
 
   df = next(df_iter)
 
