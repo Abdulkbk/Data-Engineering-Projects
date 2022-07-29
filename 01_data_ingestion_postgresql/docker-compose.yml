@@ -4,7 +4,7 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=eduvacity
+      - POSTGRES_DB=ny_taxi
       - PGDATA=/var/lib/postgresql/data
     ports:
       - '5432:5432'
