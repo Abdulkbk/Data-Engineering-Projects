@@ -1,8 +1,12 @@
 data
 
 .env
+sensitives
 
 # 02_ignores
 variables.tf
 .terraform*
 terraform.tfstate*
+
+docker-compose-default*
+logs

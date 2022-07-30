@@ -31,7 +31,7 @@ resource "google_storage_bucket" "data-lake-bucket" {
       type = "Delete"
     }
     condition {
-      age = 1
+      age = 30
     }
   }
 
