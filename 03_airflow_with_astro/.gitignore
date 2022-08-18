@@ -1,0 +1,6 @@
+.git
+.env
+.astro
+airflow_settings.yaml
+astro
+google_credentials.json
